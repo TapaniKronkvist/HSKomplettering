@@ -616,7 +616,7 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 6
   cloudProjectId: 14e462eb-57da-4d67-924b-7106443eb5aa
   framebufferDepthMemorylessMode: 0
   projectName: HSKomp

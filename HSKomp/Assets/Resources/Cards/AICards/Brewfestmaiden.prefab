@@ -641,4 +641,4 @@ MonoBehaviour:
   manaCost: 1
   cardName: Brewfestmaiden
   cardText: 
-  sleep: 0
+  sleep: 1

@@ -483,7 +483,7 @@ MonoBehaviour:
   manaCost: 1
   cardName: Firefestvisitor
   cardText: 
-  sleep: 0
+  sleep: 1
 --- !u!1 &355398903244188265
 GameObject:
   m_ObjectHideFlags: 0

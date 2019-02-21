@@ -10,7 +10,7 @@ public class AI : MonoBehaviour
     public bool aiTurn;
     public int hp, dmg, mana, cards, currentMana, spellDmg;
     [SerializeField] int cardCount;
-    public List<GameObject> aiDeck;
+    public List<GameObject> aiDeck; //List of prefabs
     public List<GameObject> table;
     public List<GameObject> cardsOnTable;
     [SerializeField] List<GameObject> playerCardsOnTable;
@@ -99,7 +99,7 @@ public class AI : MonoBehaviour
                 int checkCost = activeCard.GetComponent<AICard>().manaCost;
                 if (table[i].GetComponent<tableSpot>().empty == true && currentMana >= checkCost)
                 {
-                    GameObject newCard = Instantiate(activeCard); //Adds card to table.
+                    GameObject newCard = activeCard; //GameObject newCard = Instantiate(activeCard) as GameObject; //Adds card to table.
                     cardsOnTable.Add(newCard);//Adds card to list of played cards
                     newCard.transform.position = table[i].transform.position;//Add position
                     //aiDeck.RemoveAt(random);//Removes card from list.
@@ -127,7 +127,6 @@ public class AI : MonoBehaviour
         {
             if (cardsOnTable[i].GetComponent<AICard>().sleep == false)//If card is not sleeping it attacks.
             {
-
                 if (playerCardsOnTable.Count != 0) //Attack card.
                 {
                     GameObject target;
@@ -135,21 +134,20 @@ public class AI : MonoBehaviour
                     int random = Random.Range(0, playerCardsOnTable.Count);//Picks  a random card to attack
                     target = playerCardsOnTable[random];
                     attacker = cardsOnTable[i];
-                    target.GetComponent<Card>().hp -= attacker.GetComponent<AICard>().attack;//Resolve AIcard attack
-                    attacker.GetComponent<AICard>().hp -= target.GetComponent<Card>().attack;//Reslove Card counter attack
-                    attacker.GetComponent<AICard>().sleep = true;//Sets card to sleep so it is no longer part of iteration.
-                    //Removes any dead cards.
-                    if (target.GetComponent<Card>().hp <= 0)
-                    {
-                        Destroy(target);
-                    }
-                    if (attacker.GetComponent<AICard>().hp <= 0)
-                    {
-                        Destroy(attacker);
-                        cardsOnTable.RemoveAt(i);
-                    }
+                        target.GetComponent<Card>().hp -= attacker.GetComponent<AICard>().attack;//Resolve AIcard attack
+                        attacker.GetComponent<AICard>().hp -= target.GetComponent<Card>().attack;//Reslove Card counter attack
+                        attacker.GetComponent<AICard>().sleep = true;//Sets card to sleep so it is no longer part of iteration.
+                                         //Removes any dead cards.
+                        if (target.GetComponent<Card>().hp <= 0)
+                        {
+                            Destroy(target);
+                        }
+                        if (attacker.GetComponent<AICard>().hp <= 0)
+                        {
+                            Destroy(attacker);
+                            cardsOnTable.RemoveAt(i);
+                        }
                 }
-
             }
         }
         state = States.skill;

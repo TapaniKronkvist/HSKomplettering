@@ -92,6 +92,7 @@ public class TurnButton : MonoBehaviour
                 {
                     
                     card.GetComponent<Card>().sleep = false;
+                    card.GetComponent<Card>().hasAttacked = false;
                 }
             }
             myTurn = false;

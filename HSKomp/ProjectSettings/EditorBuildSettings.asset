@@ -5,7 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/OfficialScenes/Login.unity
+    guid: 6ead98b3da444a24e9a4a724b7a931b0
+  - enabled: 1
+    path: Assets/Scenes/OfficialScenes/MainMenu.unity
+    guid: 2bb466685b49d774a8c59d19c91ce734
+  - enabled: 1
+    path: Assets/Scenes/OfficialScenes/GameScene.unity
+    guid: 9cef6bfd24479aa47baa2ae6ba2f3809
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/DeckBuilder/UiCollection.unity
+    guid: e8aef77cfac181f4ab011316be05d8db
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/DeckBuilder/HeroSelectCreateDeck.unity
+    guid: 5b94cfda3bd31d845a95d73643c02119
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/DeckBuilder/DeckCreationPanel.unity
+    guid: aba3754425b6700469deb58f757425ac
   m_configObjects: {}

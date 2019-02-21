@@ -23,6 +23,7 @@ public class Card : MonoBehaviour
     public GameObject myHand;
     Collider myCollider;
 
+    public bool hasAttacked;
     public bool sleep;
     public bool isPlayed;
     RaycastHit hit;
@@ -41,7 +42,11 @@ public class Card : MonoBehaviour
         myCollider = GetComponent<Collider>();
         isPlayed = false;
         sleep = true;
+        hasAttacked = false;
         myPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+
+        hp = gameController.GetComponent<ReadCardData>().GetCardData(cardName).health;
+        attack = gameController.GetComponent<ReadCardData>().GetCardData(cardName).attack;
     }
 
     // Update is called once per frame
@@ -49,12 +54,12 @@ public class Card : MonoBehaviour
     {
 
         //health
-        hp = gameController.GetComponent<ReadCardData>().GetCardData(cardName).health;
+        
         showHp = GameObject.Find($"{gameObject.name}/Canvas/DisplayHp").GetComponent<Text>();
         showHp.text = "" + hp;
 
         //attack
-        attack = gameController.GetComponent<ReadCardData>().GetCardData(cardName).attack;
+        
         showAttack = GameObject.Find($"{gameObject.name}/Canvas/DisplayAttack").GetComponent<Text>();
         showAttack.text = "" + attack;
 

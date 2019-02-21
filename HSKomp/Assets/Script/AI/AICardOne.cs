@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//This class controlled the movement of cards Instantiated by the ai onto the board.
-
-public class AICard : MonoBehaviour
+public class AICardOne : MonoBehaviour
 {
-    public int hp = 4;
-    public int attack = 2;
-    public int manaCost = 1;
+    public int hp, attack, manaCost;
     public string cardName, cardText;
     Text showHp, showAttack, showManaCost, showName, showCardName, showCardText;
     public bool sleep = true;
